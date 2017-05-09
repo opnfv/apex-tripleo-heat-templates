@@ -1,5 +1,4 @@
 [gerrit]
-host=review.openstack.org
+host=gerrit.opnfv.org
 port=29418
-project=openstack/tripleo-heat-templates.git
-defaultbranch=stable/ocata
+project=apex-tripleo-heat-templates.git
