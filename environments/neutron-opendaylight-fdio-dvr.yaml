@@ -1,0 +1,27 @@
+# A Heat environment that can be used to deploy OpenDaylight with Honeycomb Agent
+resource_registry:
+  OS::TripleO::Services::NeutronOvsAgent: OS::Heat::None
+  OS::TripleO::Services::ComputeNeutronOvsAgent: OS::Heat::None
+  OS::TripleO::Services::ComputeNeutronCorePlugin: OS::Heat::None
+  OS::TripleO::Services::OpenDaylightApi: ../puppet/services/opendaylight-api.yaml
+  OS::TripleO::Services::NeutronHoneycombAgent: ../puppet/services/neutron-odl-honeycomb-agent.yaml
+  OS::TripleO::Services::Vpp: ../puppet/services/vpp-ctlplane-ip.yaml
+  OS::TripleO::Services::NeutronL3Agent: OS::Heat::None
+  OS::TripleO::Services::ComputeNeutronMetadataAgent: ../puppet/services/neutron-metadata.yaml
+
+parameter_defaults:
+  NeutronNetworkType: 'vxlan'
+  NeutronL3HA: false
+  #NUMATopologyFilter is required for vhostuser interfaces
+  #NovaSchedulerDefaultFilters: "RamFilter,ComputeFilter,AvailabilityZoneFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,NUMATopologyFilter"
+  OpenDaylightFeatures: "odl-netconf-all,odl-vbd,odl-groupbasedpolicy-neutron-vpp-mapper,odl-restconf"
+  NeutronEnableForceMetadata: true
+  NeutronMechanismDrivers: 'opendaylight_v2'
+  NeutronServicePlugins: 'odl-router_v2'
+  OpenDaylightEnableL3: "'yes'"
+  #Opendaylight Port binding controller
+  OpenDaylightPortBindingController: 'pseudo-agentdb-binding'
+  #URI for neutron hostconfig in Opendaylight
+  OpenDaylightHostconfURI: 'restconf/operational/neutron:neutron/hostconfigs'
+  ExtraConfig:
+    neutron::agents::dhcp::interface_driver: "neutron.agent.linux.interface.NSDriver"
