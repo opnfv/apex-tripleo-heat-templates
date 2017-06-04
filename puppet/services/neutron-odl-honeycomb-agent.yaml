@@ -70,5 +70,11 @@ outputs:
             dport:
               - {get_param: HoneycombRestPort}
               - {get_param: HoneycombNetconfSSHPort}
+          '144 Lisp ports':
+            dport:
+              - 4341
+              - 4342
+            proto: udp
+
       step_config: |
         include ::tripleo::profile::base::neutron::agents::honeycomb

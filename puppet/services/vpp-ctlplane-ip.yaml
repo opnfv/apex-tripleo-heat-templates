@@ -1,0 +1,59 @@
+heat_template_version: newton
+
+description: >
+  Vpp service with ctlplane IP configured with Puppet
+
+parameters:
+  ServiceNetMap:
+    default: {}
+    description: Mapping of service_name -> network name. Typically set
+                 via parameter_defaults in the resource registry.  This
+                 mapping overrides those in ServiceNetMapDefaults.
+    type: json
+  DefaultPasswords:
+    default: {}
+    type: json
+  EndpointMap:
+    default: {}
+    description: Mapping of service endpoint -> protocol. Typically set
+                 via parameter_defaults in the resource registry.
+    type: json
+  VppCpuMainCore:
+    default: ''
+    description: VPP main thread core pinning.
+    type: string
+  VppCpuCorelistWorkers:
+    default: ''
+    description: List of cores for VPP worker thread pinning
+    type: string
+  MonitoringSubscriptionVpp:
+    default: 'overcloud-vpp'
+    type: string
+
+resources:
+  VppCtlplaneIp:
+    type: OS::Neutron::Port
+    properties:
+      network: ctlplane
+      name: 'VPP IP'
+      replacement_policy: AUTO
+
+outputs:
+  role_data:
+    description: Role data for the Vpp role.
+    value:
+      service_name: vpp
+      monitoring_subscription: {get_param: MonitoringSubscriptionVpp}
+      config_settings:
+        # Core pinning is being set in controller_extraconfig and compute_extraconfig to allow
+        # role specifc settings
+        #fdio::vpp_cpu_main_core: {get_param: VppCpuMainCore}
+        #fdio::vpp_cpu_corelist_workers: {get_param: VppCpuCorelistWorkers}
+        vpp_ctlplane_cidr:
+          list_join:
+            - ''
+            - - {get_attr: [VppCtlplaneIp, fixed_ips, 0, ip_address]}
+              - '/'
+              - {str_split: ['/', {get_attr: [VppCtlplaneIp, subnets, 0, cidr]}, 1]}
+      step_config: |
+        include ::tripleo::profile::base::vpp
