@@ -140,6 +140,7 @@
   HostnameFormatDefault: '%stackname%-novacompute-%index%'
   disable_upgrade_deployment: True
   ServicesDefault:
+    - OS::TripleO::Services::Barometer
     - OS::TripleO::Services::CACerts
     - OS::TripleO::Services::CephClient
     - OS::TripleO::Services::CephExternal
