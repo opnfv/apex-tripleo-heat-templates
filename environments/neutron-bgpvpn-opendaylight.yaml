@@ -1,0 +1,22 @@
+# A Heat environment file that can be used to deploy Neutron BGPVPN service
+# 
+#  This environment file deploys Neutron BGPVPN service and configures
+#  Opendaylight as its service provider.
+#
+# - OpenDaylight: BGPVPN:OpenDaylight:networking_bgpvpn.neutron.services.service_drivers.opendaylight.odl.OpenDaylightBgpvpnDriver:default
+
+resource_registry:
+  OS::TripleO::Services::NeutronBgpVpnApi: ../puppet/services/neutron-bgpvpn-api.yaml
+  OS::TripleO::Services::NeutronOvsAgent: OS::Heat::None
+  OS::TripleO::Services::ComputeNeutronOvsAgent: OS::Heat::None
+  OS::TripleO::Services::ComputeNeutronCorePlugin: OS::Heat::None
+  OS::TripleO::Services::OpenDaylightApi: ../puppet/services/opendaylight-api.yaml
+  OS::TripleO::Services::OpenDaylightOvs: ../puppet/services/opendaylight-ovs.yaml
+  OS::TripleO::Services::NeutronL3Agent: OS::Heat::None
+
+parameter_defaults:
+  NeutronEnableForceMetadata: true
+  NeutronMechanismDrivers: 'opendaylight'
+  NeutronNetworkType: 'vxlan'
+  NeutronServicePlugins: 'odl-router_v2, networking_bgpvpn.neutron.services.plugin.BGPVPNPlugin'
+  BgpvpnServiceProvider: 'BGPVPN:OpenDaylight:networking_bgpvpn.neutron.services.service_drivers.opendaylight.odl.OpenDaylightBgpvpnDriver:default'
