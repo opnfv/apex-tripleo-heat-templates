@@ -1,5 +1,5 @@
 # A Heat environment file that can be used to deploy Neutron BGPVPN service
-# 
+#
 #  This environment file deploys Neutron BGPVPN service and configures
 #  Opendaylight as its service provider.
 #
@@ -7,6 +7,7 @@
 
 resource_registry:
   OS::TripleO::Services::NeutronBgpVpnApi: ../puppet/services/neutron-bgpvpn-api.yaml
+  OS::TripleO::Services::NeutronCorePlugin: ../puppet/services/neutron-plugin-ml2-odl.yaml
   OS::TripleO::Services::NeutronOvsAgent: OS::Heat::None
   OS::TripleO::Services::ComputeNeutronOvsAgent: OS::Heat::None
   OS::TripleO::Services::ComputeNeutronCorePlugin: OS::Heat::None
