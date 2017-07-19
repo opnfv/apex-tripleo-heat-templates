@@ -32,6 +32,14 @@ parameters:
   OpenDaylightApiVirtualIP:
     type: string
     default: ''
+  OpenDaylightPortBindingController:
+    description: OpenDaylight port binding controller
+    type: string
+    default: ''
+  OpenDaylightHostconfURI:
+    description: URI for neutron hostconfig in OpenDaylight.
+    type: string
+    default: ''
   EndpointMap:
     default: {}
     description: Mapping of service endpoint -> protocol. Typically set
@@ -60,6 +68,8 @@ outputs:
         opendaylight::enable_dhcp: {get_param: OpenDaylightEnableDHCP}
         opendaylight::odl_bind_ip: {get_param: [ServiceNetMap, OpendaylightApiNetwork]}
         opendaylight::nb_connection_protocol: {get_param: OpenDaylightConnectionProtocol}
+        neutron::plugins::ml2::opendaylight::port_binding_controller: {get_param: OpenDaylightPortBindingController}
+        neutron::plugins::ml2::opendaylight::odl_hostconf_uri: {get_param: OpenDaylightHostconfURI}
         tripleo.opendaylight_api.firewall_rules:
               '137 opendaylight api':
                 dport:
