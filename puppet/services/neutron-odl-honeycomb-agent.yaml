@@ -1,0 +1,74 @@
+heat_template_version: newton
+
+description: >
+  OpenStack Neutron Honeycomb agent configured with Puppet
+
+parameters:
+  ServiceNetMap:
+    default: {}
+    description: >
+      Mapping of service_name -> network name. Typically set via
+      parameter_defaults in the resource registry. This mapping overrides those
+      in ServiceNetMapDefaults.
+    type: json
+  DefaultPasswords:
+    default: {}
+    type: json
+  EndpointMap:
+    default: {}
+    description: Mapping of service endpoint -> protocol. Typically set
+                 via parameter_defaults in the resource registry.
+    type: json
+  HoneycombUser:
+    description: Username for Honeycomb agent
+    type: string
+    default: 'admin'
+  HoneycombPassword:
+    description: Password for Honeycomb agent
+    type: string
+    hidden: true
+    default: 'admin'
+  HoneycombRestPort:
+    description: Port for Honeycomb REST interface to listen on.
+    type: number
+    default: 8183
+  HoneycombNetconfSSHPort:
+    description: Honeycomb Netconf SSH binding port.
+    type: number
+    default: 2831
+  OpenDaylightUsername:
+    default: 'admin'
+    description: The username for the opendaylight server.
+    type: string
+  OpenDaylightPassword:
+    default: 'admin'
+    type: string
+    description: The password for the opendaylight server.
+    hidden: true
+  OpenDaylightPort:
+    default: 8081
+    description: OpenDaylight service port
+    type: number
+
+outputs:
+  role_data:
+    description: Role data for Honeycomb agent service.
+    value:
+      service_name: neutron_honeycomb_agent
+      config_settings:
+        fdio::honeycomb::user: {get_param: HoneycombUser}
+        fdio::honeycomb::password: {get_param: HoneycombPassword}
+        fdio::honeycomb::rest_port: {get_param: HoneycombRestPort}
+        fdio::honeycomb::opendaylight_ip: '"%{hiera(\"opendaylight_api_vip\")}"'
+        fdio::honeycomb::opendaylight_port: {get_param: OpenDaylightPort}
+        fdio::honeycomb::opendaylight_username: {get_param: OpenDaylightUsername}
+        fdio::honeycomb::opendaylight_password: {get_param: OpenDaylightPassword}
+        fdio::honeycomb::bind_ip: {get_param: [ServiceNetMap, HoneycombNetwork]}
+        fdio::honeycomb::node_id: '"%{::fqdn}"'    #NOTE: extra quoting is needed
+        tripleo.neutron_honeycomb_agent.firewall_rules:
+          '142 neutron honeycomb agent':
+            dport:
+              - {get_param: HoneycombRestPort}
+              - {get_param: HoneycombNetconfSSHPort}
+      step_config: |
+        include ::tripleo::profile::base::neutron::agents::honeycomb

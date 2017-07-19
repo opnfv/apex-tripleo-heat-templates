@@ -79,6 +79,9 @@ parameters:
       MistralApiNetwork: internal_api
       ZaqarApiNetwork: internal_api
       PacemakerRemoteNetwork: internal_api
+      EtcdNetwork: internal_api
+      GluonNetwork: internal_api
+      HoneycombNetwork: internal_api
       # We special-case the default ResolveNetwork for the CephStorage role
       # for backwards compatibility, all other roles default to internal_api
       CephStorageHostnameResolveNetwork: storage
