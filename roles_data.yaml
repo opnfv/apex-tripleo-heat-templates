@@ -56,6 +56,7 @@
     - OS::TripleO::Services::HeatEngine
     - OS::TripleO::Services::MySQL
     - OS::TripleO::Services::MySQLClient
+    - OS::TripleO::Services::NeutronSfcApi
     - OS::TripleO::Services::NeutronDhcpAgent
     - OS::TripleO::Services::NeutronL3Agent
     - OS::TripleO::Services::NeutronMetadataAgent
