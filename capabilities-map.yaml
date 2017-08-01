@@ -221,6 +221,11 @@ topics:
             description: Enables Neutron LBaaSv2 Service Plugin and Agent
             requires:
               - overcloud-resource-registry-puppet.yaml
+          - file: environments/neutron-sfc.yaml
+            title: Neutron SFC Service Plugin
+            description: Enables Neutron SFC Service Plugin
+            requires:
+              - overcloud-resource-registry-puppet.yaml
           - file: environments/neutron-ml2-bigswitch.yaml
             title: BigSwitch Extensions
             description: >

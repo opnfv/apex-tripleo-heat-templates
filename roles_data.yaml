@@ -97,6 +97,7 @@
     - OS::TripleO::Services::MongoDb
     - OS::TripleO::Services::MySQL
     - OS::TripleO::Services::MySQLClient
+    - OS::TripleO::Services::NeutronSfcApi
     - OS::TripleO::Services::NeutronApi
     - OS::TripleO::Services::NeutronBgpVpnApi
     - OS::TripleO::Services::NeutronCorePlugin
