@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_24d8e61c",
+        "filename": "puppet/services/congress.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 3889
+      },
+      "writtenOn": "2017-08-10T18:08:23Z",
+      "side": 1,
+      "message": "This should be of type comma_delimited_list, it seems like what puppet-congress is expecting. You will also avoid having to write a multi-line string by using a list.",
+      "range": {
+        "startLine": 59,
+        "startChar": 10,
+        "endLine": 59,
+        "endChar": 16
+      },
+      "revId": "ae0bc56e530b7a660d0eb124a9f5274548501167",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
