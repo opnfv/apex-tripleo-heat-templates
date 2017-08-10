@@ -22,6 +22,30 @@
       "revId": "ae0bc56e530b7a660d0eb124a9f5274548501167",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_44fc0a3f",
+        "filename": "puppet/services/congress.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 132
+      },
+      "writtenOn": "2017-08-10T22:30:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da33351e_24d8e61c",
+      "range": {
+        "startLine": 59,
+        "startChar": 10,
+        "endLine": 59,
+        "endChar": 16
+      },
+      "revId": "ae0bc56e530b7a660d0eb124a9f5274548501167",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
