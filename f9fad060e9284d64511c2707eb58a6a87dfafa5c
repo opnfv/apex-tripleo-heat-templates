@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_ce5cb428",
+        "filename": "environments/enable_congress.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 132
+      },
+      "writtenOn": "2017-08-11T10:25:28Z",
+      "side": 1,
+      "message": "I\u0027m wondering if it makes sense to have it here defined overriding the default list value in puppet/services/congress.yaml. The only difference is here DoctorDriver is appended to the list. Thoughts?",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "f9fad060e9284d64511c2707eb58a6a87dfafa5c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
