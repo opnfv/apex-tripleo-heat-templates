@@ -70,6 +70,30 @@
       "revId": "f9fad060e9284d64511c2707eb58a6a87dfafa5c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_c203e571",
+        "filename": "environments/enable_congress.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2017-08-14T21:56:31Z",
+      "side": 1,
+      "message": "Great, then it is probably best to leave default same as puppet-congress and override here. +1",
+      "parentUuid": "da33351e_a2822150",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "f9fad060e9284d64511c2707eb58a6a87dfafa5c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
