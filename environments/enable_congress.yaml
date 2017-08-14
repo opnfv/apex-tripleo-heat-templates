@@ -1,2 +1,11 @@
 resource_registry:
   OS::TripleO::Services::Congress: ../puppet/services/congress.yaml
+
+parameter_defaults:
+  CongressDrivers: ['congress.datasources.neutronv2_driver.NeutronV2Driver',
+                    'congress.datasources.glancev2_driver.GlanceV2Driver',
+                    'congress.datasources.nova_driver.NovaDriver',
+                    'congress.datasources.keystone_driver.KeystoneDriver',
+                    'congress.datasources.ceilometer_driver.CeilometerDriver',
+                    'congress.datasources.cinder_driver.CinderDriver',
+                    'congress.datasources.doctor_driver.DoctorDriver']

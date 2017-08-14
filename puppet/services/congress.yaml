@@ -47,6 +47,15 @@ parameters:
     default: 5672
     description: Set rabbit subscriber port, change this if using SSL
     type: number
+  CongressDrivers:
+    default: ['congress.datasources.neutronv2_driver.NeutronV2Driver',
+              'congress.datasources.glancev2_driver.GlanceV2Driver',
+              'congress.datasources.nova_driver.NovaDriver',
+              'congress.datasources.keystone_driver.KeystoneDriver',
+              'congress.datasources.ceilometer_driver.CeilometerDriver',
+              'congress.datasources.cinder_driver.CinderDriver']
+    description: Comma-separated list of data source drivers
+    type: comma_delimited_list
 
 outputs:
   role_data:
@@ -72,6 +81,7 @@ outputs:
         congress::rabbit_use_ssl: {get_param: RabbitClientUseSSL}
         congress::rabbit_port: {get_param: RabbitClientPort}
         congress::server::bind_host: {get_param: [ServiceNetMap, CongressApiNetwork]}
+        congress::drivers: {get_param: CongressDrivers}
 
         congress::keystone::authtoken::password: {get_param: CongressPassword}
         congress::keystone::authtoken::project_name: 'service'
