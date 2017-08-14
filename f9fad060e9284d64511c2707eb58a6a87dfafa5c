@@ -46,6 +46,30 @@
       "revId": "f9fad060e9284d64511c2707eb58a6a87dfafa5c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_a2822150",
+        "filename": "environments/enable_congress.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 132
+      },
+      "writtenOn": "2017-08-14T15:47:13Z",
+      "side": 1,
+      "message": "No default set by triple-heat-template, but from puppet-congress: https://github.com/openstack/puppet-congress/blob/master/manifests/params.pp#L8\n\nYes, this fixes the error in CI :-)",
+      "parentUuid": "da33351e_275e2346",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "f9fad060e9284d64511c2707eb58a6a87dfafa5c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
