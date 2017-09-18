@@ -1,0 +1,40 @@
+heat_template_version: ocata
+
+description: Configure hieradata for Network Cisco configuration
+
+parameters:
+  # Parameters passed from the parent template
+  server:
+    type: string
+
+resources:
+  VppCtlplaneIp:
+    type: OS::Neutron::Port
+    properties:
+      network: ctlplane
+      name: 'VPP IP'
+      replacement_policy: AUTO
+
+  VppAdminIpConfig:
+    type: OS::Heat::StructuredConfig
+    properties:
+      group: hiera
+      config:
+        datafiles:
+          vpp_data:
+            map_merge:
+              - vpp_ctlplane_cidr:
+                  list_join:
+                    - ''
+                    - - {get_attr: [VppCtlplaneIp, fixed_ips, 0, ip_address]}
+                      - '/'
+                      - {str_split: ['/', {get_attr: [VppCtlplaneIp, subnets, 0, cidr]}, 1]}
+
+  VppAdminIpDeployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: VppCtlplaneIp
+    properties:
+      name: VppAdminIpDeployment
+      config: {get_resource: VppAdminIpConfig}
+      server:  {get_param: server}
+      actions: ['CREATE'] # Only do this on CREATE

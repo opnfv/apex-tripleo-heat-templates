@@ -472,6 +472,7 @@ resources:
           - cisco_n1kv_data # Optionally provided by ControllerExtraConfigPre
           - midonet_data #Optionally provided by AllNodesExtraConfig
           - cisco_aci_data # Optionally provided by ControllerExtraConfigPre
+          - vpp_data # Optionally provided by NodeExtraConfig
           - common # provided by os-net-config
         merge_behavior: deeper
         datafiles:
