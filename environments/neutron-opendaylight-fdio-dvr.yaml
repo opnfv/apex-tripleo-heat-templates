@@ -15,7 +15,7 @@ parameter_defaults:
   NeutronL3HA: false
   #NUMATopologyFilter is required for vhostuser interfaces
   #NovaSchedulerDefaultFilters: "RamFilter,ComputeFilter,AvailabilityZoneFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,NUMATopologyFilter"
-  OpenDaylightFeatures: "odl-restconf,odl-netconf-all,odl-groupbasedpolicy-neutron-vpp-mapper,odl-lispflowmapping-msmr"
+  OpenDaylightFeatures: "odl-restconf,odl-netconf,odl-vbd,odl-groupbasedpolicy-neutron-vpp-mapper,odl-groupbasedpolicy-vpp,odl-lispflowmapping-msmr,odl-lispflowmapping-mappingservice-shell"
   NeutronEnableForceMetadata: true
   NeutronMechanismDrivers: 'opendaylight_v2'
   NeutronServicePlugins: 'odl-router_v2'
