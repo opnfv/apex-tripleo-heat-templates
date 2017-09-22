@@ -77,6 +77,7 @@ outputs:
         tacker::keystone::authtoken::project_name: 'service'
         tacker::keystone::authtoken::auth_url: {get_param: [EndpointMap, KeystoneAdmin, uri_no_suffix]}
         tacker::keystone::authtoken::auth_uri: {get_param: [EndpointMap, KeystoneInternal, uri]}
+        tacker::keystone::authtoken::password: {get_param: TackerPassword}
 
         tacker::db::mysql::password: {get_param: TackerPassword}
         tacker::db::mysql::user: tacker
