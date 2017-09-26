@@ -21,7 +21,7 @@ parameters:
   BgpvpnServiceProvider:
     default: 'BGPVPN:Dummy:networking_bgpvpn.neutron.services.service_drivers.driver_api.BGPVPNDriver:default'
     description: Backend to use as a service provider for BGPVPN
-  type: string
+    type: string
 
 outputs:
   role_data:
