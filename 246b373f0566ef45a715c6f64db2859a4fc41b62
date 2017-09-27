@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_96d999f5",
+        "filename": "environments/neutron-ml2-vpp.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2017-09-27T17:48:18Z",
+      "side": 1,
+      "message": "neutron::agents::dhcp::interface_driver: \"neutron.agent.linux.interface.NSDriver\"",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 97
+      },
+      "revId": "246b373f0566ef45a715c6f64db2859a4fc41b62",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
