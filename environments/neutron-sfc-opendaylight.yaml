@@ -14,5 +14,5 @@ parameter_defaults:
   NeutronMechanismDrivers: 'opendaylight_v2'
   OpenDaylightFeatures: ["odl-netvirt-sfc","odl-jolokia"]
   NeutronServicePlugins: 'odl-router_v2,trunk,flow_classifier,sfc'
-  NeutronSfcDriver: 'odl_v2'
-  NeutronFcDriver: 'odl_v2'
+  NeutronSfcDriver: 'odl'
+  NeutronFcDriver: 'odl'
