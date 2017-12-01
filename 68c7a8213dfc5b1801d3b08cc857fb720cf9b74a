@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_50df513b",
+        "filename": "environments/neutron-bgpvpn-opendaylight.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3243
+      },
+      "writtenOn": "2017-12-01T12:54:11Z",
+      "side": 1,
+      "message": "There is also a mistake here. When using ODL L3, this service plugin should be \"odl_router-v2\"\n\nCheck: https://review.openstack.org/#/c/511277/7/environments/neutron-bgpvpn-opendaylight.yaml",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 32
+      },
+      "revId": "68c7a8213dfc5b1801d3b08cc857fb720cf9b74a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_70e37505",
+        "filename": "environments/neutron-bgpvpn-opendaylight.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3243
+      },
+      "writtenOn": "2017-12-01T12:54:11Z",
+      "side": 1,
+      "message": "You can use stevedore alias: \"bgpvpn\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 12,
+        "endChar": 88
+      },
+      "revId": "68c7a8213dfc5b1801d3b08cc857fb720cf9b74a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
