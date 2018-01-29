@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_0d11cb51",
+        "filename": "puppet/services/barometer.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7063
+      },
+      "writtenOn": "2018-01-29T17:38:48Z",
+      "side": 1,
+      "message": "Does Gnocchi username/password also works for Aodh?",
+      "revId": "4fb8ca1f12af94dbf42ecff19a98b12e246e4f4e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
