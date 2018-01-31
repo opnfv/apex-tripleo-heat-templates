@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3d3df0_62e06129",
+        "filename": "puppet/services/barometer.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2018-01-31T18:55:20Z",
+      "side": 1,
+      "message": "missing:\n  ServiceData:\n    default: {}\n    description: Dictionary packing service data\n    type: json",
+      "revId": "4fb8ca1f12af94dbf42ecff19a98b12e246e4f4e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_0d11cb51",
         "filename": "puppet/services/barometer.yaml",
         "patchSetId": 1
