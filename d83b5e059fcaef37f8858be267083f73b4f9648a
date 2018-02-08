@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_980865db",
+        "filename": "puppet/services/barometer.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2018-02-08T14:43:01Z",
+      "side": 1,
+      "message": "You also need these:\n  RoleName:\n    default: \u0027\u0027\n    description: Role name on which the service is applied\n    type: string\n  RoleParameters:\n    default: {}\n    description: Parameters specific to the role\n    type: json",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "d83b5e059fcaef37f8858be267083f73b4f9648a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
