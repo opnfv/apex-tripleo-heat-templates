@@ -1,0 +1,10 @@
+Code-Review+1: Akhila Kishore <akhila.kishore@intel.com>
+Code-Review+1: Aaron Smith <aasmith@redhat.com>
+Code-Review+1: ramamani yeleswarapu <ramamani.yeleswarapu@intel.com>
+Code-Review+2: Tim Rozet <trozet@redhat.com>
+Verified+1: Tim Rozet <trozet@redhat.com>
+Submitted-by: Tim Rozet <trozet@redhat.com>
+Submitted-at: Fri, 23 Feb 2018 00:59:30 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/51205
+Project: apex-tripleo-heat-templates
+Branch: refs/heads/master
