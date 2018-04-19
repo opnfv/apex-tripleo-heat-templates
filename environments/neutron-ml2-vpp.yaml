@@ -18,9 +18,14 @@ parameter_defaults:
   NeutronServicePlugins: vpp-router
   NeutronTypeDrivers: vlan,flat
   NeutronFlatNetworks: external
+  DatabaseSyncTimeout: 1800
   ExtraConfig:
     # Use Linux Bridge driver for DHCP agent.
     neutron::agents::dhcp::interface_driver: "neutron.agent.linux.interface.BridgeInterfaceDriver"
+    # Workaround for https://jira.opnfv.org/browse/FDS-156
+    # Ignore vif plugging error for now.
+    nova::network::neutron::vif_plugging_is_fatal: false
+    nova::network::neutron::vif_plugging_timeout: 0
+  ControllerExtraConfig:
     # Create VPP tap0 interface and connect it to br-ex linux bridge for external connectivity.
     fdio::vpp_exec_commands: ["create tap host-if-name vpp_ext_tap host-bridge br-ex rx-ring-size 1024 tx-ring-size 1024", "set interface state tap0 up"]
-
