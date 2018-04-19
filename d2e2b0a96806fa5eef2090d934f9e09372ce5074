@@ -1,0 +1,7 @@
+Code-Review+2: Tim Rozet <trozet@redhat.com>
+Verified+1: Tim Rozet <trozet@redhat.com>
+Submitted-by: Tim Rozet <trozet@redhat.com>
+Submitted-at: Thu, 19 Apr 2018 12:56:35 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/56035
+Project: apex-tripleo-heat-templates
+Branch: refs/heads/stable/fraser
